@@ -13,7 +13,7 @@ namespace DataAccessFactories
         private ConnectionStringSettings connectionStringSettings;
         public DatabaseHandlerFactory(string connectionStringName, IConfiguration configuration)
         {
-            connectionStringSettings = ConfigurationManager.ConnectionStrings[connectionStringName];
+            connectionStringSettings = ConfigurationManager.ConnectionStrings[connectionStringName];//When you are trying to use Web.config files 
             if (connectionStringSettings == null)
             {
                 var connectionString = configuration.GetConnectionString(connectionStringName);
